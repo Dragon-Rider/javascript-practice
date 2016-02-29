@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+
+<script type="text/javascript">
+	var book = {
+		directDefinition : 2005
+	};
+
+
+	//defineProperties方法定义的属性的特性configurable和writable均为false,
+	//只有直接对属性进行定义（如上述方法）的特性为默认的true
+	Object.defineProperties(book, {
+		_year : {
+			value : 2005
+		},
+		edition : {
+			value : 1
+		},
+		year : {
+			get : function(){
+				return this._year;
+			},
+			set : function(newValue){
+				if (newValue > 2004) {
+					this._year = newValue;
+					this.edition += newValue - 2004;
+				}
+			}
+		}
+	});
+
+	var decriptor = Object.getOwnPropertyDescriptor(book, "directDefinition");
+
+	console.log("directDefinition\n")
+	console.log("value : " + decriptor.value);
+	console.log("configurable : " + decriptor.configurable);
+	console.log("writable : " + decriptor.writable);
+	console.log("get : " + typeof decriptor.get);
+
+	var decriptor = Object.getOwnPropertyDescriptor(book, "_year");
+	console.log("_year\n")
+	console.log("value : " + decriptor.value);
+	console.log("configurable : " + decriptor.configurable);
+	console.log("writable : " + decriptor.writable);
+	console.log("get : " + typeof decriptor.get);
+
+	book.year = 2006;
+	console.log(book.year);
+	var decriptor = Object.getOwnPropertyDescriptor(book, "year");
+	console.log("value of year : " + decriptor.value);
+	console.log("configurable of year : " + decriptor.configurable);
+	console.log("get of year : " + typeof decriptor.get);
+</script>
+
+
+</body>
+</html>

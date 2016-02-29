@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+<script type="text/javascript">
+var displayArgs = function (args) {
+
+	var outputs = "";
+
+	if (typeof args.name == "string") {
+		outputs = outputs + "Name: " + args.name + "\n";
+	} 
+	if (typeof args.age == "number") {
+		outputs = outputs + "Age: " + args.age + "\n";
+	}
+
+	alert(outputs);
+	//alert(arguments.length);
+}
+
+displayArgs({
+	"name": "eragon",
+	"age" : 25
+})
+
+displayArgs({
+	"name": "jianghuan"
+})
+
+
+
+</script>
+</body>
+</html>
