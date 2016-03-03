@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+
+
+
+<script type="text/javascript">
+	function Person(name, age, job) {
+		this.name  = name;
+		this.age   = age;
+		this.job   = job;
+		this.hobbies = ["running", "soccer"];
+	}
+
+	Person.prototype = {
+		constructor : Person,
+		sayName     : function() {
+			console.log(this.name);
+		}
+	}
+
+	var person1 = new Person("Eragon", 25, "Engineer");
+	var person2 = new Person("Keithy", 20, "Analyst");
+
+	person1.hobbies.push("reading");
+	console.log(person1);
+	console.log(person2);
+
+
+
+
+</script>
+</body>
+</html>

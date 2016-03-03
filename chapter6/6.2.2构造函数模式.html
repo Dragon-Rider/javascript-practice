@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+
+
+	<script type="text/javascript">
+	//注意构造函数首字母大写
+	function Person(name, age, job){
+		this.name = name;
+		this.age  = age;
+		this.job  = job;
+
+		this.sayJob = function(){
+			console.log(this.job);
+		}
+	}
+
+	var person1 = new Person("Lily", 20, "analyst");
+	var person2 = new Person("Bob", 22, "engineer");	
+
+	person1.sayJob();
+	person2.sayJob();
+
+	console.log("person1.constructor == Person: " + (person1.constructor == Person));
+	console.log("person2.constructor == Person: " + (person2.constructor == Person));
+	console.log("person1.sayJob == person2.sayJob: " + (person1.sayJob == person2.sayJob));
+	console.log("person1.constructor == person2.constructor: " + (person1.constructor == person2.constructor));
+
+    console.log("person1 instanceof Person: " +  (person1 instanceof Person));
+    console.log("person2 instanceof Person: " +  (person1 instanceof Person));
+    console.log("person1 instanceof Object: " +  (person1 instanceof Person));
+    console.log("person2 instanceof Object: " +  (person1 instanceof Person));
+	</script>
+</body>
+</html>

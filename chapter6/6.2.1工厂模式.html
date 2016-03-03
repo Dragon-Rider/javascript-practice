@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script type="text/javascript">
+	function factory (name, age, job) {
+		var o  = new Object;
+		
+		o.name = name;
+		o.age  = age;
+		o.job  = job;
+		o.sayJob = function(){
+			alert(o.job);  //或者写成alert(this.job); 均可
+		}
+		
+		return o; 
+	}
+
+	var person1 = factory("Lily", 20, "analyst");
+	var person2 = factory("Bob", 22, "engineer");
+
+	person1.sayJob();
+	person2.sayJob();
+
+
+
+	</script>
+</body>
+</html>

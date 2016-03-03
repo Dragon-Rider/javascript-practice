@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+
+	<script type="text/javascript">
+	function Person(){};
+
+	Person.prototype.name = "Eragon";
+	Person.prototype.age  = "25";
+	Person.prototype.job  = "engineer";
+
+	Person.prototype.sayName  = function(){
+		console.log(this.name);
+	}
+
+	var person1 = new Person;
+
+	console.log(person1.name);
+	person1.name = "Nicholas";
+	console.log(person1.name);
+
+	var person2 = new Person;
+	console.log(person2.name)
+	console.log(person1.name == person2.name);
+	console.log(person1.sayName == person2.sayName)
+
+	//删除实例person1的属性name
+/*	delete person1.name;
+	console.log(person1.name);*/
+
+	//删除原型对象Person.prototype的属性name	
+/*	delete Person.prototype.name;
+	console.log(person2.name);*/
+
+	//getPrototypeOf方法可以获取实例的对应的原型对象，即实例属性_proto_指向的原型对象。
+	console.log(Object.getPrototypeOf(person1));
+
+	//判定属性是不是在实例上
+	console.log(person1.hasOwnProperty("name"));
+
+	//判断属性是否在原型对象上
+	function hasPrototypeProerty(object, property){
+		//in操作符，无论属性在实例还是在原型对象上都会返回true
+		return !object.hasOwnProperty(property) && (property in object);
+	}
+
+	console.log(hasPrototypeProerty(person1, "name"));
+	console.log(hasPrototypeProerty(person2, "name"));
+
+	//Object的getOwnPropertyNames 和 keys方法都只能遍历当前实例的属性，无法向上遍历
+	person1.hobby = "running";
+	var keys1 = Object.getOwnPropertyNames(person1);
+	console.log(keys1)
+	var keys2 = Object.getOwnPropertyNames(person2);
+	console.log(keys2)
+	var keys = Object.getOwnPropertyNames(Person.prototype);
+	console.log(keys)
+
+	//for in 遍历的包括实例和原型链对象上的所有属性
+	for(prop in person1){
+		console.log(prop);
+	}
+
+	</script>
+</body>
+</html>

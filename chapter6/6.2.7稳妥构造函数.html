@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>6.2.7</title>
+</head>
+<body>
+	
+	<script type="text/javascript">
+		//对稳妥构造函数原理的解释http://bbs.csdn.net/topics/360031679
+		//核心就是函数的作用域是在定义时而非运行时。
+		function Person(name, age, job ) {
+		    var o = new Object();
+		    o.name = name;
+		    o.age = age;
+		    o.job = job;
+		    o.sayName = function() {
+		        alert(name); //注意这里没有了“this”；
+		    };
+		    return o;
+		}
+
+		var person = Person("Nicholas", 29, "software Engineer");
+		person.name = "Greg";
+		person.sayName(); //"Nicholas"
+	</script>
+</body>
+</html>

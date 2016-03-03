@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script type="text/javascript">
+	var SpecialArray = function() {
+		var arr = new Array();
+
+		//这种写法很简洁，直接把构造函数收到的参数"数组"arguments通过apply方法给push到了arr里去了
+		arr.push.apply(arr, arguments);
+
+
+		arr.toPipedString = function() {
+			return this.join("|");alert(1)
+		}
+		return arr;
+	}
+
+/*	SpecialArray.prototype.toPipedString =  function() {
+			return this.join("|");alert(1)
+	};
+
+	console.log(SpecialArray.prototype)*/
+
+	/**********注意返回的对象与构造函数或者构造函数的原型属性之间没有关系*********/
+	var a = new SpecialArray("10", "11", "12");
+	console.log(a instanceof SpecialArray);
+
+/*	console.log(Object.getPrototypeOf(a));*/
+	console.log(a.toPipedString());
+
+	var b = new SpecialArray("a", "b", "c");
+	console.log(b.toPipedString());
+
+	console.log(a.toPipedString == b.toPipedString);
+	</script>
+</body>
+</html>
