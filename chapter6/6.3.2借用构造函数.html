@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>借用构造函数</title>
+</head>
+<body>
+	
+<script type="text/javascript">
+	function superType() {
+		this.colors = [];+
+
+		
+	}
+	function subType() {
+		superType.apply(this, arguments);
+	}
+
+	var instace1 = new subType();
+	instace1.colors.push("white");
+	console.log("instace1:" + instace1.colors);
+
+	var instace2 = new subType();
+	console.log("instace2:" + instace2.colors);
+
+
+</script>
+
+
+</body>
+</html>

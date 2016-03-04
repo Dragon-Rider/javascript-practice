@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>原型链</title>
+</head>
+<body>
+	<script type="text/javascript">
+	function superType() {
+		this.supProperty = true;
+	}
+
+	superType.prototype.getSupValue = function() {
+		console.log("this.supProperty: " + this.supProperty);
+	}
+
+	function subType() {
+		this.subProperty = false;
+	}
+
+	subType.prototype = new superType();
+
+	subType.prototype.getSubValue = function() {
+		console.log("this.subProperty: " + this.subProperty)
+	}
+
+	var instace = new subType();
+
+	instace.getSupValue();
+	instace.getSubValue();
+
+
+
+	</script>
+</body>
+</html>
