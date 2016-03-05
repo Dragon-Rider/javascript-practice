@@ -7,20 +7,27 @@
 <body>
 	
 <script type="text/javascript">
-	function superType() {
-		this.colors = [];+
 
-		
+	//传递数组类型的参数
+
+	function superType(arr) {
+		console.log(arr);
+		this.colors = arr;
 	}
-	function subType() {
+	function subType(arr) {
+		//注意这两种写法都正确，call方法只接受单一参数，形参arr此时作为数组的指针是一个参数。
+		//superType.call(this, arr);
+		console.log(arguments)
 		superType.apply(this, arguments);
 	}
 
-	var instace1 = new subType();
+	var arr      = ["blue", "pink"];
+	var instace1 = new subType(arr);
+
 	instace1.colors.push("white");
 	console.log("instace1:" + instace1.colors);
 
-	var instace2 = new subType();
+	var instace2 = new subType(["black", "purper"]);
 	console.log("instace2:" + instace2.colors);
 
 

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>原型式继承</title>
+</head>
+<body>
+	
+	<script type="text/javascript">
+	function object(o) {
+		var F = function(){};
+		F.prototype = o;
+		return new F;
+	}
+
+	var Person = {
+		"name"   : "Eragon",
+		"colors" : ["white", "black"]
+	}
+
+	var anotherPerson  = object(Person);
+	anotherPerson.name =  "Nicholas";
+	anotherPerson.colors.push("red");
+	console.log(anotherPerson.name);
+	console.log(anotherPerson.colors);
+
+	//Object.create方法为ECMAScripts5原生方法，在只输入一个参数时效果和这里定义的object方法一致。
+	var yetOtherPerson  = Object.create(Person, {
+		name : {
+			value :"Bob"
+		}
+	});
+	//yetOtherPerson.name = "Bob";
+	yetOtherPerson.colors.push("blue"); 
+	console.log(yetOtherPerson.name);
+	console.log(yetOtherPerson.colors);
+
+
+	</script>
+	
+</body>
+</html>

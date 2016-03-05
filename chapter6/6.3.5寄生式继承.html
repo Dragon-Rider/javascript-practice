@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>寄生式继承</title>
+</head>
+<body>
+	<script type="text/javascript">
+	var original = {
+		name  : "Eragon",
+		colors: ["white", "black"]
+	}
+
+	function createAnother(o) {
+		var clone = o;
+		clone.sayHi = function() {
+			console.log("Hi!");
+		}
+
+		return clone;
+	}
+
+	var anotherPerson = createAnother(original);
+	anotherPerson.sayHi();
+
+
+	</script>
+</body>
+</html>
