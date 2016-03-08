@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>执行环境和作用域</title>
+</head>
+<body>
+	<script type="text/javascript">
+
+	var color = "red";
+
+	function changeColor() {
+		var anotherColor = "blue";
+
+		function swapColor() {
+			var tempColor = color;
+			color = anotherColor;
+			anotherColor = tempColor
+		}
+
+		swapColor();
+	}
+
+	changeColor();
+
+	console.log("color:" + color);
+	//console.log("anotherColor:" + anotherColor);  anotherColor为局部变量，全局环境下无法访问
+
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>作为值得函数</title>
+</head>
+<body>
+	<script type="text/javascript">
+	function callSomeFunction(someFunction, someArgument) {
+		return someFunction(someArgument);
+	}
+
+	function greeting(name) {
+		return "Hello " + name;
+	}
+
+	var result = callSomeFunction(greeting, "Eragon");
+	console.log(result);
+
+	function comparsion(property) {
+		return function(object1, object2) {
+			var value1 = object1[property],
+			    value2 = object2[property];
+
+			return value1 - value2; 
+			//可以这么理解   
+			//升序：当原value1 > value2 此时大的value在前面，返回正数，将大的value项目向后移。
+			//降序：当原value1 < value2 此时小的value在前面，返回负数，数组顺序不变
+		}
+
+	}
+
+	var data = [{
+			name: "Eragon",
+			age: "25"
+		}, {
+			name: "Nicholas",
+			age: "40"
+		}, {
+			name: "jack",
+			age: "15"
+		}];
+
+	data.sort(comparsion("age"));
+	console.log(data);
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>传递参数</title>
+</head>
+<body>
+	<script type="text/javascript">
+
+	function setName(obj) {
+		obj.name = "Eragon";
+
+		obj = new Object();
+		obj.name = "JiangHuan";
+	}
+
+	var person = new Object();
+	setName(person);
+
+	console.log(person.name);
+
+
+	</script>
+</body>
+</html>
