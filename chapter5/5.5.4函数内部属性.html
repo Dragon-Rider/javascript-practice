@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>函数内部属性</title>
+</head>
+<body>
+	<script type="text/javascript">
+	//callee属性指向当前执行函数，caller属性指向调用当前执行函数的父函数，如果是在全局作用域中调用当前函数，它的值为null。
+
+	function outer() {
+		//return arguments.callee.caller;
+		return inner();
+	}
+
+	function inner() {
+		return arguments.callee.caller;
+	}
+
+	console.log(outer());
+	</script>
+
+</body>
+</html>
