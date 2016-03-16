@@ -15,7 +15,7 @@
 		    o.age = age;
 		    o.job = job;
 		    o.sayName = function() {
-		        alert(name); //注意这里没有了“this”；
+		        console.log(name); //注意这里没有了“this”；
 		    };
 		    return o;
 		}
@@ -23,6 +23,7 @@
 		var person = Person("Nicholas", 29, "software Engineer");
 		person.name = "Greg";
 		person.sayName(); //"Nicholas"
+		console.log(person);
 	</script>
 </body>
 </html>

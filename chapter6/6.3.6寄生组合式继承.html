@@ -40,10 +40,9 @@
 	}
 
 	var instance1 = new subType("Eragon", 25);  
-	//new操作符使构造函数subType返回的为一个对象
+	//new操作符使构造函数subType返回的为一个实例
 	//否者使用这种写法instance1 = subType("Eragon", 25);  instance1会显示undefined原因是这种写法为“函数定义”写法，但subType函数并没有显示的返回(return)一个值。
-
-	
+	//???  page179  构造函数在不返回值得情况下，默认会返回新对象的实例
 
 	console.log(instance1);
 	instance1.sayAge();
