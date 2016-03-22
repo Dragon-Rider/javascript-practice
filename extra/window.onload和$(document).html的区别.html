@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>window.onload和$(document).html的区别</title>
+	<script type="text/javascript" src="../libs/jquery-1.9.0.js"></script>
+</head>
+<body>
+	<script type="text/javascript">
+
+	//注意zepto不支持$(window).load()方法，下面的代码只有jquery可以使用
+	//会依次弹出两个alert框
+/*
+	$(window).load(function() {
+        alert("hello,我是jQuery!");
+	});
+	$(window).load(function() {
+		alert("hello,我也是jQuery");
+	});
+*/
+
+	//zepto可以写成	$(window).on("load", function(){})的形式
+/*	
+	$(window).on("load", function(){
+		alert("hello,我是zepto!");
+	})
+	$(window).on("load", function(){
+		alert("hello,我也是zepto!");
+	})
+*/
+
+	//只会弹出text2
+/*
+	window.onload = function(){ 
+	  alert("text1"); 
+	}; 
+	window.onload = function(){ 
+	  alert("text2"); 
+	}; 
+*/
+
+	//会依次弹出两个alert框
+/*
+	$(document).ready(function(){ 
+	  alert("Hello World"); 
+	}); 
+	$(document).ready(function(){ 
+	  alert("Hello again"); 
+	})
+*/
+
+
+
+	</script>
+</body>
+</html>
