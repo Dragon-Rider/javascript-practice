@@ -9,8 +9,9 @@
 	(function() {
 		var name = '';
 
+		//注意这里用的是函数定义的全局式写法，省略了var是为了使定义的函数作为全局函数。
 		Person = function (value){
-			name = value
+			name = arguments[0]; //这里value和arguments[0]的值相等
 		};
 
 		Person.prototype.getName = function() {
@@ -20,11 +21,15 @@
 		Person.prototype.setName = function(val) {
 			name = val;
 		}
-
-	})()
+	})();
 
 	var person1 = new Person("Eragon");
 	console.log(person1.getName());
+	//console.log(person1.name);
+
+	var person2 = new Person("Nicholas");
+	console.log(person1.getName());
+	console.log(person2.getName());
 
 	</script>
 </body>

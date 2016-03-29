@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>模块模式</title>
+</head>
+<body>
+	<script type="text/javascript">
+
+	function baseComponent(){
+	}
+
+	var appication = function() {
+		var components = [];
+
+		components.push(new baseComponent());
+
+		return {
+			getCompeonentsCount: function() {
+				return components.length;
+			},
+			registerComponent: function(newComponent) {
+				if ("object" == typeof newComponent) {
+					components.push(newComponent);
+				}
+			},
+			listComponent: function(){
+				return components;
+			}
+		};
+	}();
+
+	console.log(appication.listComponent());
+	appication.registerComponent({1:2});
+	console.log(appication.listComponent());
+
+	</script>
+</body>
+</html>
