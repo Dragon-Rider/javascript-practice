@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>闭包与变量</title>
+</head>
+<body>
+	
+	<script type="text/javascript">
+	var createFunctions = function() {
+		var result = [];
+		//或者使用var result = new Array();的写法。
+		//但[]的写法效率更高，这是因为JSON格式的语法是引擎直接解释的。而new Array 则需要调用Array的构造器
+		for(var i = 0; i < 10; i++) {
+			result[i] = function() {
+				return i;
+			}
+		}
+		return result;
+	}
+
+	var createFunctionsByClosure = function() {
+		var result = [];
+
+		for(var i = 0; i < 10; i++) {
+			result[i] = function(num){
+				return function() {
+					return num;
+				} 
+			}(i);
+		}
+
+		return result;
+	}
+
+	var arr1 = createFunctions();
+	console.log(arr1[3]());
+
+	var arr2 = createFunctionsByClosure();
+	console.log(arr2[3]());
+	
+
+	</script>
+</body>
+</html>

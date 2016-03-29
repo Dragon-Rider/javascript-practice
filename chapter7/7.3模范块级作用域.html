@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>模范块级作用域</title>
+</head>
+<body>
+	<script type="text/javascript">
+	(function() {
+		var now     = new Date(),
+			curYear = now.getFullYear(),
+			curMonth = now.getMonth() + 1,
+			curDate = now.getDate();
+		
+		console.log("今天是" + curYear + "年" + curMonth + "月" + curDate + "日");
+	})()
+
+
+	function outputNum(count) {
+		for (var i = 0; i < count; i++) {
+			console.log("i:" + i);
+		}
+
+		console.log("for之外:" + i);
+	}
+
+	function outputNumByClosure(count) {
+		(function() {
+			for (var i = 0; i < count; i++) {
+				console.log("i:" + i);
+			}
+		})()
+
+		console.log("for之外:" + i);
+	}
+
+
+	outputNum(5);
+	outputNumByClosure(5);
+	</script>
+</body>
+</html>

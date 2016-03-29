@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>关于this对象</title>
+</head>
+<body>
+	
+	<script type="text/javascript">
+	var name = "The windows";
+
+	//匿名函数的执行环境具有全局性，因此其this对象通常指向window
+	var object1 = {
+		name: "The object1",
+		getNameFunc: function() {
+			return function() {
+				return this.name;
+			}
+		}
+	};
+
+	console.log(object1.getNameFunc()());
+
+	var object2 = {
+		name: "The object2",
+		getNameFunc: function() {
+			var that = this;
+			return function() {
+				return that.name;
+			}
+		}
+	}
+
+	console.log(object2.getNameFunc()());
+
+	var object3 = {
+		name: "The object3",
+		getNameFunc: function() {
+			return this.name;			
+		}
+	}
+
+	console.log(object3.getNameFunc());
+	console.log((object3.getNameFunc)());
+	console.log((object3.getNameFunc = object3.getNameFunc)());
+	</script>
+</body>
+</html>
