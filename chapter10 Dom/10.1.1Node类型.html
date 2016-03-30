@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>节点层次</title>
+</head>
+<body>
+	<ul>
+		<li>itme1</li>
+		<li>itme2</li>
+		<li>itme3</li>
+	</ul>
+	<ol id="ol1">
+		<li>itme1</li>
+		<li>itme2</li>
+		<li>itme3</li>
+	</ol>
+
+	<script type="text/javascript">
+		var ulNode = document.getElementsByTagName("ul")[0],
+			body   = document.getElementsByTagName("body")[0],
+			ol     = document.getElementById("ol1");
+
+/*		将nodelist对象转为数组
+		var arrayOfNodes = Array.prototype.slice.call(body.childNodes, 0);
+		console.log(arrayOfNodes);*/
+		
+		var cloneNode = ulNode.cloneNode(true);
+		var returnNode = body.insertBefore(cloneNode, body.firstChild);
+
+		console.log(body.childNodes);
+		console.log(ulNode.childNodes);
+		console.log(ol.childNodes);
+		console.log(cloneNode);
+
+	</script>
+</body>
+</html>

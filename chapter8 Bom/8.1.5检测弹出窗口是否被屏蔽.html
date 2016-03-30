@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>检测弹出窗口是否被屏蔽</title>
+</head>
+<body>
+	<script type="text/javascript">
+/*	var newWin = window.open("http://www.baidu.com", "newWin");  //第二个参数，如果是已有窗口或者框架的名称，那么就会在其窗口或者框架中加载第一个参数指定的URL。
+	newWin.close();*/
+
+	var isBlocked = false;
+
+	try {
+		var newWin = window.open("http://www.baidu.com", "newWin");
+		if (null == newWin) {
+			console.log(newWin);
+			isBlocked = true;
+		}
+	} catch (e) {
+		console.log(e);
+		isBlocked = true;
+	}
+
+	if (isBlocked) {
+		alert("新窗口被拦住了");
+	}
+
+	</script>
+</body>
+</html>

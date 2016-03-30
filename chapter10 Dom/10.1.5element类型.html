@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>element</title>
+</head>
+<body>
+	<ol id="ol" name="olName" class="olClass" data-test="test">
+		<li id="li1" data="data"></li>
+		<li></li>
+		<li></li>
+	</ol>    
+	<script type="text/javascript">
+	function enumAttributes(element) {
+		var arr = [],
+			len = element.attributes.length,
+			i = 0,
+			attrName,
+			attrVal;
+
+		//console.log(element.attributes)
+		for (; i < len; i++) {
+			attrName = element.attributes[i].nodeName;
+			attrval = element.attributes[i].nodeValue;
+			arr.push(attrName + "=" + attrval);
+		}
+
+		console.log(arr.join(" "))
+
+	}
+
+	var olEle = document.getElementById("ol");
+	enumAttributes(olEle);
+
+	console.log(olEle.childNodes[1].attributes[0].name);
+
+	</script>
+
+
+</body>
+</html>
