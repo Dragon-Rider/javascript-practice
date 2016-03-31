@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>使用nodeList</title>
+</head>
+<body>
+<div></div>
+<script type="text/javascript">
+	//nodeList、HTMLCollection、NamedNodeMap的关系: http://www.cnblogs.com/wangfupeng1988/p/3626300.html
+
+	var divs = document.getElementsByTagName("div"),
+		//len  = divs.length,
+		i    = 0;
+
+		console.log(divs)
+
+	for (; i < divs.length; i++) {
+		document.body.appendChild(document.createElement("div"));
+		console.log(i);
+	}
+
+</script>
+	
+</body>
+</html>
