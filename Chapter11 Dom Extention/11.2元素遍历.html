@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>元素遍历</title>
+</head>
+<body>
+	<ul class="test">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+
+	<script type="text/javascript">
+		var ul = document.querySelectorAll(".test")[0],   //注意querySelectorAll取回来的是一组符合条件的对象
+			li = ul.firstElementChild,
+			i = 0;
+
+		while (li != null) {
+			li.innerHTML = i;
+			li = li.nextElementSibling;
+			console.log(li)
+			i++;
+		}
+
+	</script>
+</body>
+</html>

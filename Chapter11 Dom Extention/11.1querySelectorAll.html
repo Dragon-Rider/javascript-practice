@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>querySelectorAll</title>
+</head>
+<body>
+	<div>1</div>
+	<div>2</div>	
+
+
+	<script type="text/javascript">
+	var divs = document.querySelectorAll("div"),
+		len = divs.length,
+		i;
+
+	for (i = 0; i < len; i++) {
+		divs[i].innerHTML = "3";
+		divs[i].className = "test1";
+		//divs[i].setAttribute("class", "test2");
+		//divs.item(i).className = "test3";
+	}
+
+	</script>
+</body>
+</html>
