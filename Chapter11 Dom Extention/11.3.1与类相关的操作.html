@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>11.3.1与类相关的操作</title>
+</head>
+<body>
+	<div class=" bd user disabled"></div>
+
+	<script type="text/javascript">
+	var div = document.getElementsByClassName("user")[0],
+		classNames = div.className.split(/\s+/);  //这个正则split出来的字符串数组包含了空格
+
+/*	
+	传统方法
+	var len = classNames.length,
+		i,
+		pos;
+	for (i = 0; i < len; i++) {
+		if ("user" == classNames[i]) {
+			pos = i;
+			break;
+		}
+	}
+
+	classNames.splice(i, 1);
+	div.className = classNames.join(" ");
+*/
+
+	//HTML5 新增类名操作函数
+	console.log(div.classList);
+	div.classList.remove("user");
+
+
+
+	</script>
+</body>
+</html>
