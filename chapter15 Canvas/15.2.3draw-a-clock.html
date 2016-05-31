@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>clock</title>
+</head>
+<body>
+    <canvas id="drawing" width="400" height="400"></canvas>
+    <script type="text/javascript">
+        var drawing = document.querySelector('#drawing');
+
+        if(drawing.getContext) {
+            var context = drawing.getContext('2d');
+
+            context.beginPath();
+            context.arc(150, 150, 100, 0, 2 * Math.PI, false);
+            context.moveTo(245, 150);  //将路径移到内圆的起点
+            context.arc(150, 150, 95, 0, 2 * Math.PI, false);
+
+
+            context.font = "14px bold Arial";
+            context.textAlign = "center";
+            context.textBaseLine = "middle";
+            context.fillText("12", 150, 80);
+
+            context.translate(150, 150);  //设置坐标原点
+            context.rotate(1);
+            context.moveTo(0, 0);
+            context.lineTo(0, -80);
+            context.moveTo(0,0);
+            context.lineTo(-60,0);
+
+            context.stroke();
+
+
+            if (context.isPointInPath(160, 150)) {
+                console.log("Point(150, 150) is in the path.");   //Chrome下在外圆之内的所有点都在路径上
+            }
+        }
+
+
+
+    </script>
+</body>
+</html>

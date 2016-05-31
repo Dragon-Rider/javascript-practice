@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>灰阶过滤器</title>
+</head>
+<body>
+    <canvas id="drawing" width="200" height="200"></canvas> 
+    <img src="./pic/flowers.png" id="flowers">
+   
+
+    <script type="text/javascript">
+    window.onload = function(){
+        var drawing = document.querySelector('#drawing'),
+            img     = document.images[0],
+            imageData, width, height, data, i, len, red, green, blue, alpha, average;
+
+        if (drawing.getContext) {
+            var ctx = drawing.getContext('2d');
+
+            ctx.drawImage(img, 0, 0, 100, 100, 0, 0, 100, 100);
+            imageData = ctx.getImageData(0, 0, 100, 100);
+            width  = imageData.width;
+            height = imageData.height;
+            data = imageData.data;
+            //这里得开服务器打开页面，否则会报跨域的错误
+            console.log(data)
+            for (i = 0; len = data.length; i += 4) {
+            red   = data[i];
+            green = data[i + 1];
+            blue  = data[i + 2];
+            alpha = data[i + 3];
+
+
+            //average = Math.floor((red + green + blue) / 3);
+            //console.log(average)
+                //data[i] = data[i+1] = data[i+2] = average;
+                //console.log(data[i])
+            //}
+
+            //imageData.data = data;
+            console.log(red)
+
+            //ctx.putImageData(imageData, 0, 0);
+
+            
+            }  
+        }
+    }
+      
+
+
+    </script>
+
+</body>
+</html>

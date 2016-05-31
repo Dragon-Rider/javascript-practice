@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>13.3事件对象</title>
+</head>
+<body id="myBody">
+
+    <input type="button" id="myBtn01"/ value="button01">
+    <input type="button" id="myBtn02"/ value="button02">
+
+    <script type="text/javascript">
+        var btn01 = document.getElementById('myBtn01'),
+            btn02 = document.getElementById('myBtn02'),
+            myBody = document.getElementById('myBody');
+
+        btn01.addEventListener('click', function(){
+            console.log("btn01:")
+            console.log(event.target);
+            console.log(event.currentTarget);
+            console.log(this);
+        }, false);
+
+        myBody.addEventListener('click', function(){
+            console.log("myBody:");
+            console.log(event.target);
+            console.log(event.currentTarget);
+            console.log(this);
+            console.log('在事件处理程序内部，对象this始终等于currentTarget的值，而target只包含事件的实际目标');
+        }, false);
+
+        btn02.onclick = function() {
+            console.log("btn02:")
+            console.log(event);
+        }
+
+    </script>        
+</body>
+</html>

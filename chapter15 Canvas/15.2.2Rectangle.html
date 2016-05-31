@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rectangle</title>
+</head>
+<body>
+    <canvas id="drawing" width="400" height="400"></canvas>
+    <img src = './pic/lamp.gif' height="32" width="32" id="lamp" />
+
+    <script type="text/javascript">
+        var drawing = document.querySelector('#drawing');
+
+        if(drawing.getContext) {
+            var context = drawing.getContext('2d');
+            context.fillStyle = "#ff0000";
+            context.fillRect(10, 10, 50, 50);
+            context.fillStyle = "rgba(0, 0, 255, 0.5)";
+            context.fillRect(30, 30, 50, 50);
+            context.clearRect(30, 30, 30, 30);
+
+        }
+
+        //toDataURL方法，注意：toDataURL方法是canvas对象的方法，不是上下文对象的方法
+        var imageURL = drawing.toDataURL('image/png');
+        console.log(imageURL);  //图片的base64转码
+        
+        var img = document.createElement('img');   //注意这里是img
+        img.src = imageURL;
+        document.body.insertBefore(img, document.body.firstChild); //注意这里第一个参数为新节点，别写反了
+
+        var image01 = document.images[0];
+        //console.log(image01);
+        context.drawImage(image01, 0, 0, 60, 60, 120, 100, 30, 30);
+
+        //模式  ???????????????????????
+        //context.clearRect(0, 0, 400, 400)
+        var lamp = document.getElementById('lamp'),
+            pattern = context.createPattern(lamp, 'repeat-x');
+           
+        console.log(lamp); 
+        context.fillStyle = pattern;
+        context.fillRect(200, 200, 100, 100);
+
+
+
+
+    </script>
+</body>
+</html>

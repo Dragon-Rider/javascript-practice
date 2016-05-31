@@ -1,0 +1,189 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '-g',
+1 verbose cli   'cnpm',
+1 verbose cli   '--registry=http://r.cnpmjs.org' ]
+2 info using npm@2.15.0
+3 info using node@v4.4.2
+4 verbose install initial load of /usr/local/lib/package.json
+5 verbose readDependencies loading dependencies from /usr/local/lib/package.json
+6 silly cache add args [ 'cnpm', null ]
+7 verbose cache add spec cnpm
+8 silly cache add parsed spec Result {
+8 silly cache add   raw: 'cnpm',
+8 silly cache add   scope: null,
+8 silly cache add   name: 'cnpm',
+8 silly cache add   rawSpec: '',
+8 silly cache add   spec: 'latest',
+8 silly cache add   type: 'tag' }
+9 silly addNamed cnpm@latest
+10 verbose addNamed "latest" is being treated as a dist-tag for cnpm
+11 info addNameTag [ 'cnpm', 'latest' ]
+12 silly mapToRegistry name cnpm
+13 silly mapToRegistry using default registry
+14 silly mapToRegistry registry http://r.cnpmjs.org/
+15 silly mapToRegistry data Result {
+15 silly mapToRegistry   raw: 'cnpm',
+15 silly mapToRegistry   scope: null,
+15 silly mapToRegistry   name: 'cnpm',
+15 silly mapToRegistry   rawSpec: '',
+15 silly mapToRegistry   spec: 'latest',
+15 silly mapToRegistry   type: 'tag' }
+16 silly mapToRegistry uri http://r.cnpmjs.org/cnpm
+17 verbose addNameTag registry:http://r.cnpmjs.org/cnpm not in flight; fetching
+18 verbose request uri http://r.cnpmjs.org/cnpm
+19 verbose request no auth needed
+20 info attempt registry request try #1 at 14:50:55
+21 verbose request id 54846e244b2344a6
+22 http request GET http://r.cnpmjs.org/cnpm
+23 http 200 http://r.cnpmjs.org/cnpm
+24 verbose headers { server: 'nginx/1.4.6 (Ubuntu)',
+24 verbose headers   date: 'Wed, 13 Apr 2016 06:50:55 GMT',
+24 verbose headers   'content-type': 'application/json; charset=utf-8',
+24 verbose headers   'transfer-encoding': 'chunked',
+24 verbose headers   connection: 'keep-alive',
+24 verbose headers   'x-readtime': '44',
+24 verbose headers   'content-encoding': 'gzip' }
+25 silly get cb [ 200,
+25 silly get   { server: 'nginx/1.4.6 (Ubuntu)',
+25 silly get     date: 'Wed, 13 Apr 2016 06:50:55 GMT',
+25 silly get     'content-type': 'application/json; charset=utf-8',
+25 silly get     'transfer-encoding': 'chunked',
+25 silly get     connection: 'keep-alive',
+25 silly get     'x-readtime': '44',
+25 silly get     'content-encoding': 'gzip' } ]
+26 verbose get saving cnpm to /Users/jianghuan/.npm/r.cnpmjs.org/cnpm/.cache.json
+27 verbose correctMkdir /Users/jianghuan/.npm correctMkdir not in flight; initializing
+28 silly addNameTag next cb for cnpm with tag latest
+29 silly addNamed cnpm@4.2.0
+30 verbose addNamed "4.2.0" is a plain semver version for cnpm
+31 silly cache afterAdd cnpm@4.2.0
+32 verbose afterAdd /Users/jianghuan/.npm/cnpm/4.2.0/package/package.json not in flight; writing
+33 verbose correctMkdir /Users/jianghuan/.npm correctMkdir not in flight; initializing
+34 verbose afterAdd /Users/jianghuan/.npm/cnpm/4.2.0/package/package.json written
+35 silly install resolved [ { name: 'cnpm',
+35 silly install resolved     version: '4.2.0',
+35 silly install resolved     description: 'cnpm: npm client for cnpmjs.org',
+35 silly install resolved     main: 'bin/cnpm',
+35 silly install resolved     scripts:
+35 silly install resolved      { test: 'mocha test/*.test.js --timeout 60000',
+35 silly install resolved        cnpm: 'npm i --registry=https://registry.npm.taobao.org' },
+35 silly install resolved     preferGlobal: true,
+35 silly install resolved     bin:
+35 silly install resolved      { cnpm: './bin/cnpm',
+35 silly install resolved        'cnpm-check': './bin/cnpm-check',
+35 silly install resolved        'cnpm-sync': './bin/cnpm-sync',
+35 silly install resolved        'cnpm-web': './bin/cnpm-web',
+35 silly install resolved        'cnpm-user': './bin/cnpm-user',
+35 silly install resolved        'cnpm-doc': './bin/cnpm-doc',
+35 silly install resolved        'cnpm-search': './bin/cnpm-search' },
+35 silly install resolved     dependencies:
+35 silly install resolved      { 'auto-correct': '^1.0.0',
+35 silly install resolved        bagpipe: '^0.3.5',
+35 silly install resolved        colors: '^1.0.3',
+35 silly install resolved        commander: '~2.7.1',
+35 silly install resolved        'cross-spawn': '~0.2.8',
+35 silly install resolved        debug: '^2.2.0',
+35 silly install resolved        giturl: '^1.0.0',
+35 silly install resolved        npm: '^3.8.0',
+35 silly install resolved        'npm-request': '~0.0.4',
+35 silly install resolved        open: '~0.0.5',
+35 silly install resolved        urllib: '^2.8.0',
+35 silly install resolved        npminstall: '^1.3.1' },
+35 silly install resolved     devDependencies:
+35 silly install resolved      { autod: '*',
+35 silly install resolved        'fs-extra': '0',
+35 silly install resolved        jshint: '2',
+35 silly install resolved        mocha: '2',
+35 silly install resolved        should: '5' },
+35 silly install resolved     homepage: 'https://github.com/cnpm/cnpm',
+35 silly install resolved     repository:
+35 silly install resolved      { type: 'git',
+35 silly install resolved        url: 'git://github.com/cnpm/cnpm.git',
+35 silly install resolved        web: 'https://github.com/cnpm/cnpm' },
+35 silly install resolved     bugs:
+35 silly install resolved      { url: 'https://github.com/cnpm/cnpm/issues',
+35 silly install resolved        email: 'm@fengmk2.com' },
+35 silly install resolved     keywords: [ 'cnpm' ],
+35 silly install resolved     engines: { node: '>= 4.3.2' },
+35 silly install resolved     author:
+35 silly install resolved      { name: 'fengmk2',
+35 silly install resolved        email: 'm@fengmk2.com',
+35 silly install resolved        url: 'http://fengmk2.com' },
+35 silly install resolved     license: 'MIT',
+35 silly install resolved     contributors: [ [Object], [Object], [Object], [Object], [Object], [Object] ],
+35 silly install resolved     gitHead: '9cd002b0a00d7c984c1bd7ac1c21d57e17e8b230',
+35 silly install resolved     _id: 'cnpm@4.2.0',
+35 silly install resolved     _shasum: '7b59c8f5c23fda615bb4fc7b84de46c4bbb4880c',
+35 silly install resolved     _from: 'cnpm@latest',
+35 silly install resolved     _npmVersion: '2.14.12',
+35 silly install resolved     _nodeVersion: '4.3.2',
+35 silly install resolved     _npmUser: { name: 'fengmk2', email: 'fengmk2@gmail.com' },
+35 silly install resolved     maintainers: [ [Object], [Object], [Object] ],
+35 silly install resolved     dist:
+35 silly install resolved      { shasum: '7b59c8f5c23fda615bb4fc7b84de46c4bbb4880c',
+35 silly install resolved        size: 9496,
+35 silly install resolved        noattachment: false,
+35 silly install resolved        tarball: 'https://r.cnpmjs.org/cnpm/download/cnpm-4.2.0.tgz' },
+35 silly install resolved     _npmOperationalInternal:
+35 silly install resolved      { host: 'packages-12-west.internal.npmjs.com',
+35 silly install resolved        tmp: 'tmp/cnpm-4.2.0.tgz_1457714865359_0.37735210661776364' },
+35 silly install resolved     directories: {},
+35 silly install resolved     publish_time: 1457714867813,
+35 silly install resolved     _cnpm_publish_time: 1457714867813,
+35 silly install resolved     _resolved: 'https://r.cnpmjs.org/cnpm/download/cnpm-4.2.0.tgz',
+35 silly install resolved     readme: 'ERROR: No README data found!' } ]
+36 info install cnpm@4.2.0 into /usr/local/lib
+37 info installOne cnpm@4.2.0
+38 verbose installOne of cnpm to /usr/local/lib not in flight; installing
+39 verbose correctMkdir /Users/jianghuan/.npm/_locks correctMkdir not in flight; initializing
+40 verbose lock using /Users/jianghuan/.npm/_locks/cnpm-723f324a9e509f07.lock for /usr/local/lib/node_modules/cnpm
+41 silly install write writing cnpm 4.2.0 to /usr/local/lib/node_modules/cnpm
+42 verbose unbuild lib/node_modules/cnpm
+43 silly gentlyRm /usr/local/lib/node_modules/cnpm is being purged from base /usr/local
+44 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/cnpm
+45 verbose tar unpack /Users/jianghuan/.npm/cnpm/4.2.0/package.tgz
+46 verbose tar unpacking to /usr/local/lib/node_modules/cnpm
+47 silly gentlyRm /usr/local/lib/node_modules/cnpm is being purged
+48 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/cnpm
+49 silly gunzTarPerm modes [ '755', '644' ]
+50 error tar.unpack untar error /Users/jianghuan/.npm/cnpm/4.2.0/package.tgz
+51 verbose unlock done using /Users/jianghuan/.npm/_locks/cnpm-723f324a9e509f07.lock for /usr/local/lib/node_modules/cnpm
+52 verbose fstream_path /usr/local/lib/node_modules/cnpm
+53 verbose fstream_type Directory
+54 verbose fstream_class DirWriter
+55 verbose stack Error: EACCES: permission denied, mkdir '/usr/local/lib/node_modules/cnpm'
+55 verbose stack     at Error (native)
+56 verbose fstream_stack /usr/local/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:35:25
+56 verbose fstream_stack /usr/local/lib/node_modules/npm/node_modules/mkdirp/index.js:47:53
+56 verbose fstream_stack FSReqWrap.oncomplete (fs.js:82:15)
+57 verbose cwd /Users/jianghuan/devlope/practice/practice-javascript
+58 error Darwin 15.4.0
+59 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "install" "-g" "cnpm" "--registry=http://r.cnpmjs.org"
+60 error node v4.4.2
+61 error npm  v2.15.0
+62 error path /usr/local/lib/node_modules/cnpm
+63 error code EACCES
+64 error errno -13
+65 error syscall mkdir
+66 error Error: EACCES: permission denied, mkdir '/usr/local/lib/node_modules/cnpm'
+66 error     at Error (native)
+66 error  { [Error: EACCES: permission denied, mkdir '/usr/local/lib/node_modules/cnpm']
+66 error   errno: -13,
+66 error   code: 'EACCES',
+66 error   syscall: 'mkdir',
+66 error   path: '/usr/local/lib/node_modules/cnpm',
+66 error   fstream_type: 'Directory',
+66 error   fstream_path: '/usr/local/lib/node_modules/cnpm',
+66 error   fstream_class: 'DirWriter',
+66 error   fstream_stack:
+66 error    [ '/usr/local/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:35:25',
+66 error      '/usr/local/lib/node_modules/npm/node_modules/mkdirp/index.js:47:53',
+66 error      'FSReqWrap.oncomplete (fs.js:82:15)' ] }
+67 error Please try running this command again as root/Administrator.
+68 verbose exit [ -13, true ]
+69 verbose unbuild lib/node_modules/cnpm
+70 silly gentlyRm /usr/local/lib/node_modules/cnpm is being purged from base /usr/local
+71 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/cnpm
