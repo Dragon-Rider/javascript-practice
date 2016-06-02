@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图像加载</title>
+</head>
+<body>
+    <script type="text/javascript">
+        /*图片是从设置了src开始下载的，而不需要添加到dom里去*/
+        window.addEventListener('load', function(){
+            var image01 = new Image(),
+                image02 = document.createElement('img');
+            console.log(image01);
+            console.log(image02);
+            image02.addEventListener('load', function(){
+                console.log('Image Loaded');
+            })
+            image02.src = '../chapter15 Canvas/pic/lamp.gif';
+        })
+
+        /*script是从设置了src并且将其添加到dom之中去才开始下载的*/
+        window.addEventListener('load', function(){
+            console.log('winow loaded')
+            var script = document.createElement('script');
+            script.addEventListener('load', function(){
+                console.log('script Loaded');
+            })
+            script.src = '../libs/zepto.js';
+            document.body.appendChild(script);
+        })
+    </script>
+</body>
+</html>

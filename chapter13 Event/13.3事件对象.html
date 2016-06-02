@@ -9,10 +9,14 @@
     <input type="button" id="myBtn01"/ value="button01">
     <input type="button" id="myBtn02"/ value="button02">
 
+    <a href="http://www.dianping.com" target="_blank" id="myLink">123</a>
+
     <script type="text/javascript">
-        var btn01 = document.getElementById('myBtn01'),
-            btn02 = document.getElementById('myBtn02'),
-            myBody = document.getElementById('myBody');
+        var btn01  = document.getElementById('myBtn01'),
+            btn02  = document.getElementById('myBtn02'),
+            myBody = document.getElementById('myBody'),
+            myLink = document.getElementById('myLink');
+
 
         btn01.addEventListener('click', function(){
             console.log("btn01:")
@@ -26,12 +30,17 @@
             console.log(event.target);
             console.log(event.currentTarget);
             console.log(this);
-            console.log('在事件处理程序内部，对象this始终等于currentTarget的值，而target只包含事件的实际目标');
+            console.log('在事件处理程序内部，对象this始终等于currentTarget的值，而target只包含事件的实际目标。在这个例子中this和currentTarget都等于document.body，因为事件处理程序是注册到这个元素的。然而，Target元素却等于按钮元素，因为他是click事件的真正目标。');
         }, false);
 
         btn02.onclick = function() {
             console.log("btn02:")
             console.log(event);
+        }
+
+        myLink.onclick = function() {
+            event.preventDefault();    //阻止默认行为，这里是链接的跳转
+            event.stopPropagation();  //阻止事件冒泡
         }
 
     </script>        
