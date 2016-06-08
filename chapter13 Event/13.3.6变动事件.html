@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>13.4.6变动事件</title>
+</head>
+<body>
+    <!-- emmet语法：div.content>ul#myList>li{item$}*3 -->
+    <div class="content">
+        <ul id="myList">
+            <li>item1</li>
+            <li>item2</li>
+            <li>item3</li>
+        </ul>
+    </div>
+
+    <script type="text/javascript">
+        window.addEventListener('load', function(){
+            var list = document.getElementById('myList');
+
+            document.addEventListener('DOMNodeRemoved', function(event){
+                console.log(event.type);    //会冒泡
+                console.log(event.target);
+                console.log(event.relatedNode);
+            });
+
+            document.addEventListener('DOMSubtreeModified', function(event){
+                console.log(event.type);    //会冒泡
+                console.log(event.target);
+            });
+
+            list.firstChild.addEventListener('DOMNodeRemovedFromDocument', function(event){
+                console.log(event.type);  //这个事件不会冒泡
+                console.log(event.target);
+            });
+
+            list.parentNode.removeChild(list);
+        })
+
+
+
+    </script>
+</body>
+</html>
